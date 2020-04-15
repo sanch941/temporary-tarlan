@@ -7,7 +7,7 @@
         "javascriptreact",
         "vue"
     ],
-    "css.validate": false,
+    "css.validate": true,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },

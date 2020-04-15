@@ -1,12 +1,13 @@
 <template>
     <div>
-        <welcome />
+        <hero />
     </div>
 </template>
 
 <script>
-import Welcome from '../components/index-page/Welcome.vue';
+import Hero from '../components/index-page/Hero.vue';
+
 export default {
-    components: { Welcome }
+    components: { Hero }
 };
 </script>

@@ -1,0 +1,57 @@
+html {
+    font-family: 'Gilroy';
+}
+
+body {
+    overflow-x: 'hidden';
+    font-size: 14px;
+    @include tablet-medium {
+        font-size: 16px;
+    }
+    @include tablet-large {
+        font-size: 18px;
+    }
+    @include desktop {
+        font-size: 24px;
+    }
+}
+
+.container {
+    width: 100%;
+    @include tablet-large {
+        width: 1024px;
+    }
+    @include desktop {
+        width: 1200px;
+    }    
+}
+
+.xs-block {
+    display: block;
+}
+
+.xs-none {
+    display: none;
+}
+
+.md-block {
+    @include tablet-medium {
+        display: block;
+    }
+}
+
+.md-none {
+    @include tablet-medium {
+        display: none;
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+@include tablet-medium {}
+
+@include tablet-large {}
+
+@include desktop {}

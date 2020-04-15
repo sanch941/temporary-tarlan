@@ -1,0 +1,38 @@
+@mixin tablet-medium {
+    @media(min-width: #{$tablet-medium-width}) {
+        @content;
+    }
+}
+
+@mixin tablet-large {
+    @media(min-width: #{$tablet-large-width}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media(min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin font-face($name, $path, $weight: 400, $style: normal, $exts: eot woff2 woff ttf) {
+	$src: null;
+	
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {	
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url('../fonts/#{$path}.#{$ext}') format('#{$format}'), comma);
+	}
+
+	@font-face {
+		font-family: '#{$name}';
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
