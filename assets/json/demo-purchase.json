@@ -1,0 +1,16 @@
+[{
+        "product": "Apple watch",
+        "price": "500 тенге",
+        "image": "@/assets/images/demo/apple-watch.png"
+    },
+    {
+        "product": "4k TV",
+        "price": "500 тенге",
+        "image": "@/assets/images/demo/4kTV.png"
+    },
+    {
+        "product": "Путевка в Таиланд",
+        "price": "500 тенге",
+        "image": "@/assets/images/demo/Thailand.png"
+    }
+]
