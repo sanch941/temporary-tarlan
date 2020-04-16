@@ -1,10 +1,15 @@
 <template>
     <div class="hero">
-        <div>Добро пожаловать</div>
         <swiper ref="heroSwiper" :options="swiperOptions">
-            <swiper-slide>Slide 1</swiper-slide>
-            <swiper-slide>Slide 2</swiper-slide>
-            <swiper-slide>Slide 3</swiper-slide>
+            <swiper-slide>
+                <hero-main />
+            </swiper-slide>
+            <swiper-slide>
+                <hero-about />
+            </swiper-slide>
+            <swiper-slide>
+                <hero-philosophy />
+            </swiper-slide>
             <div slot="pagination" class="swiper-pagination"></div>
         </swiper>
     </div>
@@ -12,11 +17,17 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+import HeroPhilosophy from './HeroPhilosophy.vue';
+import HeroAbout from './HeroAbout.vue';
+import HeroMain from './HeroMain.vue';
 
 export default {
     components: {
         Swiper,
-        SwiperSlide
+        SwiperSlide,
+        HeroMain,
+        HeroAbout,
+        HeroPhilosophy
     },
     data() {
         return {

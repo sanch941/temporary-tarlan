@@ -1,7 +1,48 @@
 .hero {
     height: 667px;
+    color: white;    
+    &__main, &__about, &__philosophy {
+        height: 100%;
+        @include img-overlay();
+    }
+    &__main {        
+        @include responsive-background('hero-main.jpg');        
+        font-weight: 300;        
+        &__title {
+            padding: 153px 0 20px;
+            font-size: 33px;            
+        }
+        &__subtitle {
+            font-size: 24px;
+        }
+        .btn {
+            margin-top: 100px;
+            @include mobile-medium {
+                margin-top: 162px;
+            }
+        }
+    }
+    &__about {     
+        font-weight: 300;
+        @include responsive-background('hero-about.jpg');     
+        &__title {
+            font-size: 36px;
+            padding-top: 73px;
+        }
+        &__subtitle {
+            font-size: 16px;
+            padding-top: 25px;
+        }
+        .btn {
+            margin-top: 25px;
+        }
+    }
+    &__philosophy {
+        @include responsive-background('hero-philosophy.jpg');
+    }
 }
 
 .swiper-container {
     height: 100%;
+    width: 100%;
 }

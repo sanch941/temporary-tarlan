@@ -1,3 +1,9 @@
+@mixin mobile-medium {
+    @media(min-width: #{$mobile-medium-width}) {
+        @content;
+    }
+}
+
 @mixin tablet-medium {
     @media(min-width: #{$tablet-medium-width}) {
         @content;
@@ -13,6 +19,33 @@
 @mixin desktop {
     @media(min-width: #{$desktop-width}) {
         @content;
+    }
+}
+
+@mixin responsive-background($mobile: null, $tablet: null, $desktop:null) {    
+
+    background-image: url('#{$imagesPath}/mobile/#{$mobile}');
+
+    // @include tablet-medium {
+    //     background-image: url('#{$imagesPath}/tablet/#{$mobile}');
+    // }
+
+    // @include desktop {
+    //     background-image: url('#{$imagesPath}/desktop/#{$desktop}');
+    // }
+}
+
+@mixin img-overlay($color: rgba(10, 0, 30, 0.5)) {
+    position: relative;
+
+    &:before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background-color: $color;
     }
 }
 
