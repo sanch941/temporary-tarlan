@@ -1,7 +1,5 @@
 import { config } from 'dotenv';
-import PurgecssPlugin from 'purgecss-webpack-plugin';
 import autoPrefixer from 'autoprefixer';
-import doesNothing from './plugins/postcss-does-nothing';
 config();
 
 export default {
@@ -32,17 +30,11 @@ export default {
     /*
      ** Global CSS
      */
-    css: ['@/assets/sass/style.scss'],
+    css: ['swiper/css/swiper.css', '@/assets/sass/style.scss'],
     /*
      ** Plugins to load before mounting the App
      */
     plugins: [],
-    optimization: {
-        splitChunks: {
-            pages: true,
-            commons: true
-        }
-    },
     /*
      ** Nuxt.js dev-modules
      */
@@ -59,45 +51,15 @@ export default {
      ** Build configuration
      */
     build: {
-        extractCSS: true,
-        transpile: ['vee-validate/dist/rules'],
         /*
          ** You can extend webpack config here
          */
         postcss: {
-            plugins: [
-                process.env.NODE_ENV === 'production'
-                    ? autoPrefixer()
-                    : doesNothing()
-            ]
+            plugins: [autoPrefixer()]
         }
     },
     env: {
         dev: process.env.NODE_ENV === 'development',
         baseUrl: process.env.BASE_URL
-    },
-    extend(config, ctx) {
-        if (!ctx.isDev) {
-            config.plugins.push(
-                new PurgecssPlugin({
-                    paths: [
-                        'components/**/*.vue',
-                        'layouts/**/*.vue',
-                        'pages/**/*.vue',
-                        'plugins/**/*.js'
-                    ],
-                    styleExtensions: ['.css'],
-                    whitelist: ['body', 'html', 'nuxt-progress'],
-                    extractors: [
-                        {
-                            extractor(content) {
-                                return content.match(/[\w-.:/]+(?<!:)/g);
-                            },
-                            extensions: ['html', 'vue', 'js']
-                        }
-                    ]
-                })
-            );
-        }
     }
 };
