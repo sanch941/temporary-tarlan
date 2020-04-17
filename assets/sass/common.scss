@@ -6,6 +6,7 @@ html {
 body {
     overflow-x: hidden;
     font-size: 14px;
+    background: #F8F8F8;
     @include tablet-medium {
         font-size: 16px;
     }
@@ -28,6 +29,15 @@ body {
         max-width: 1200px;
     }    
 }
+
+.section {
+    padding: 25px 0;
+    &__title {
+        font-size: 36px;
+        font-weight: 100;
+        color: #090413;
+    }
+} 
 
 .xs-block {
     display: block;
@@ -66,6 +76,8 @@ body {
 .w-100 {
     width: 100%;
 }
+
+
 
 @include tablet-medium {}
 
