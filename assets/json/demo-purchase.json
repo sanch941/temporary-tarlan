@@ -1,16 +1,19 @@
 [{
         "product": "Apple watch",
         "price": "500 тенге",
-        "image": "@/assets/images/demo/apple-watch.png"
+        "image": "@/assets/images/demo/demo-watch.png.png",
+        "id": 1
     },
     {
         "product": "4k TV",
         "price": "500 тенге",
-        "image": "@/assets/images/demo/4kTV.png"
+        "image": "@/assets/images/demo/demo-tv.png",
+        "id": 2
     },
     {
         "product": "Путевка в Таиланд",
         "price": "500 тенге",
-        "image": "@/assets/images/demo/Thailand.png"
+        "image": "@/assets/images/demo/demo-thailand.png",
+        "id": 3
     }
 ]

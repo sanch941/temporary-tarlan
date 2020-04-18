@@ -1,15 +1,22 @@
 <template>
     <div class="faq__question">
-        <div class="faq__icon">
+        <div class="faq-icon">
             <img src="@/assets/images/icon/faq-icon.png" alt />
         </div>
-        <p class="faq-question">{{ questionData.text }}</p>
+        <div class="faq-text">
+            <div @click="showAnswer = !showAnswer">
+                <p class="faq-text__question">{{ questionData.question }}</p>
+            </div>
+            <div v-if="showAnswer">
+                <p class="faq-text__answer">{{ questionData.answer }}</p>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'FaqItem',
+    name: 'FaqQuestion',
     components: {},
     props: {
         questionData: {
@@ -21,7 +28,7 @@ export default {
     },
     data() {
         return {
-            title: 'advantages component'
+            showAnswer: false
         };
     },
     computed: {},

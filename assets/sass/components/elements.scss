@@ -1,0 +1,68 @@
+%btn-dark {
+    background: transparent;
+    border: 1px solid #1C1526;
+    cursor: pointer;
+    width: 158px;
+
+
+}
+
+%btn-dark-text {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #1C1526;
+    padding: 7px 27px;
+
+}
+
+.enable-btn {
+    border-top: none;
+    position: relative;
+    @extend %btn-dark;
+
+    @include tablet-medium {
+        width: 300px;
+    }
+
+    @include desktop {
+        width: 350px;
+    }
+}
+
+.enable-btn span {
+    @extend %btn-dark-text;
+
+    @include tablet-medium {
+        font-size: 36px;
+        padding: 7px 47px;
+    }
+
+    @include desktop {
+        font-size: 36px;
+        padding: 7px 70px;
+    }
+}
+
+.enable-btn-border {
+    border-top: 1px solid #1C1526;
+    position: absolute;
+    right: 50%;
+    left: 0;
+}
+
+.title-dark {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 250;
+    font-size: 36px;
+    color: #090413;
+    line-height: 41px;
+}
+
+.purchase-btn {
+    @extend %btn-dark;
+    @extend %btn-dark-text;
+    text-align: center;
+}
