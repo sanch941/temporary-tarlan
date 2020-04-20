@@ -1,5 +1,5 @@
 <template>
-    <div class="hero">
+    <div class="hero relative">
         <swiper ref="heroSwiper" :options="swiperOptions">
             <swiper-slide>
                 <hero-main />
@@ -12,6 +12,18 @@
             </swiper-slide>
             <div slot="pagination" class="swiper-pagination"></div>
         </swiper>
+        <div class="hero__quotes xs-none md-block">
+            <img
+                :src="imgSrc('back.svg')"
+                alt=""
+                @click="swiperSlide('back')"
+            />
+            <img
+                :src="imgSrc('forward.svg')"
+                alt=""
+                @click="swiperSlide('forward')"
+            />
+        </div>
     </div>
 </template>
 
@@ -33,14 +45,28 @@ export default {
         return {
             swiperOptions: {
                 pagination: {
-                    el: '.swiper-pagination'
-                }
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                loop: true
             }
         };
     },
     computed: {
         swiper() {
             return this.$refs.heroSwiper.$swiper;
+        }
+    },
+    methods: {
+        imgSrc(path) {
+            return require(`../../../assets/images/svg/hero/${path}`);
+        },
+        swiperSlide(direction) {
+            if (direction === 'forward') {
+                return this.swiper.slideNext();
+            }
+
+            this.swiper.slidePrev();
         }
     }
 };

@@ -1,0 +1,123 @@
+.rate {    
+    @include tablet-medium {
+        padding: 0;
+        margin: 38px 0 0;       
+        overflow: hidden;
+        height: 200px;      
+    }
+    @include tablet-large {
+        height: 250px;
+    }
+    .container {
+        @include tablet-medium {
+            height: 100%;
+        }        
+    }
+ 
+    &__item {
+        font-weight: 300;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include tablet-medium {
+            display: block;
+            margin-top: 0;
+        }
+    }  
+    &__card {
+        font-size: 16px;
+        width: 40%;     
+        @include tablet-medium {
+            width: 150px;
+            font-size: 18px;
+        }   
+    }
+    &__percent {
+        font-weight: 500;
+        font-size: 48px;      
+        @include tablet-medium {
+            font-size: 36px;
+            vertical-align: top;
+        }  
+    }
+    &__commission {
+        font-size: 14px;
+        width: 40%;
+        @include tablet-medium {
+            font-size: 18px;
+            margin-top: 10px;
+        }   
+    }    
+    &__card, &__percent {
+        @include tablet-medium {
+            display: inline-block;            
+        }
+    }     
+    &__percent, &__commission {
+        @include tablet-medium {
+            width: auto;
+        }
+    }
+    &__background {
+        @include tablet-medium {
+            position: absolute;
+            top: 0;right: 0;         
+            width: 40%;            
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border: 3px solid #DBDBDD;   
+            border-right: none;
+            border-bottom: none;
+            .rate__item {                
+                padding-left: 32px;
+            }                                    
+        }     
+        @include desktop {
+            width: 45%;
+            .rate__item {
+                padding-left: 39px;
+            }
+        }
+    }
+    &__item-left {
+        @include tablet-medium {  
+            align-self: stretch;
+            display: flex;
+            align-items: center;          
+            width: 48%;
+            padding-top: 3px;                                    
+            border: 3px solid #DBDBDD;               
+            border-bottom: none;
+            padding-left: 5px;
+            left: -10px;
+            position: relative;
+            .rate__item {
+                padding-left: 32px;
+            }
+            @include tablet-large {
+                width: 50%;
+            }
+            @include desktop {
+                width: 52%;
+                .rate__item {
+                    padding-left: 39px;
+                }
+            }
+        }        
+    }
+    .section__title {
+        @include tablet-medium {
+            margin-right: 0;            
+        }
+    }
+    .section__title__rotated {
+        @include tablet-medium {
+            img {
+                max-width: none;
+                width: 35px;
+            }
+        }
+    }
+ }

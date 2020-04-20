@@ -1,21 +1,34 @@
-[{
-        "name": "Имя",
-        "lastname": "Фамилия",
+[
+    {        
+        "fullname": "Имя Фамилия",
         "position": "Должность"
     },
-    {
-        "name": "Имя",
-        "lastname": "Фамилия",
+    {        
+        "fullname": "Имя Фамилия",
         "position": "Должность"
     },
-    {
-        "name": "Имя",
-        "lastname": "Фамилия",
+    {        
+        "fullname": "Имя Фамилия",
         "position": "Должность"
     },
-    {
-        "name": "Имя",
-        "lastname": "Фамилия",
+    {        
+        "fullname": "Имя Фамилия",
+        "position": "Должность"
+    },
+    {        
+        "fullname": "Имя Фамилия",
+        "position": "Должность"
+    },
+    {        
+        "fullname": "Имя Фамилия",
+        "position": "Должность"
+    },
+    {        
+        "fullname": "Имя Фамилия",
+        "position": "Должность"
+    },
+    {        
+        "fullname": "Имя Фамилия",
         "position": "Должность"
     }
 ]

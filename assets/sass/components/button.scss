@@ -1,22 +1,88 @@
+@mixin btn-default-touch {
+    background: #0D0413;
+    color:white;
+}
+
 .btn {
     font-size: 18px;
-    padding: 8px 59px;
-    border: 1px solid #000;
+    padding: 8px 59px;    
     display: inline-block;
+    outline: none;
+    background: transparent;
+    border:none;
+    @include tablet-medium {
+        font-size: 24px;
+        padding: 6px 42px;
+    }
+    @include desktop {
+        cursor: pointer;
+    }
 }
 
 .btn-default {
-
+    color: #0D0413;
+    border: 1px solid #0D0413;
+    transition: 0.2s;
+    &:active {
+        @include btn-default-touch;
+    }
+    @include tablet-medium {
+        &:hover {
+            @include btn-default-touch;
+        }
+    }
 }
 
-.btn-animation {
-
+@mixin border-vertical {    
+    width: 1px;
+    height: 100%;
+    top: 0;    
 }
 
-.btn-white {
-    
+@mixin border-horizontal {
+    height: 1px;
+    width: 100%;
+    left: 0;
+    transform-origin: left center;
 }
 
-.btn-black {
-
+@mixin btn-animation-touch {
+    .btn-animation__border-3 {
+        transform: scaleX(1);
+    }                
+    background-color: white;
+    color: #0D0413;
 }
+
+.btn-animation {    
+    color: white;
+    position: relative;   
+      border: 1px solid white;
+        border-top: none;  
+    &__border {
+        display: block;        
+        position: absolute;   
+        background: white;                       
+    }
+   
+    &__border-3 {
+        @include border-horizontal;
+        top: 0;            
+        transform: scaleX(0.5);    
+    }  
+    &:active {
+        @include btn-animation-touch;
+    }
+    @include tablet-medium {    
+        transition: 0.3s ease-in-out;   
+        &__border {
+            transition: 0.2s ease-in-out;
+        }  
+        &:hover {                        
+            transition-delay: 0.2s;
+            @include btn-animation-touch;          
+        }
+    }
+   
+}
+

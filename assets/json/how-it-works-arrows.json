@@ -1,0 +1,18 @@
+[
+    {
+        "devicePath": "svg/how-it-works/arrow-mobile.svg",
+        "deviceWidth": 768
+    },
+    {
+        "devicePath": "svg/how-it-works/arrow-tablet.svg",
+        "deviceWidth": 769
+    },
+    {
+        "devicePath": "svg/how-it-works/arrow-tablet.svg",
+        "deviceWidth": 1024
+    },
+    {
+        "devicePath": "svg/how-it-works/arrow-desktop.svg",
+        "deviceWidth": 1200
+    }
+]

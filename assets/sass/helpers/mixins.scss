@@ -24,15 +24,19 @@
 
 @mixin responsive-background($mobile: null, $tablet: null, $desktop:null) {    
 
-    background-image: url('#{$imagesPath}/mobile/#{$mobile}');
+    background-image: url('#{$imagesPath}/#{$mobile}');
 
-    // @include tablet-medium {
-    //     background-image: url('#{$imagesPath}/tablet/#{$mobile}');
-    // }
+    @if $tablet {
+        @include tablet-medium {
+            background-image: url('#{$imagesPath}/#{$tablet}');
+        }
+    }
 
-    // @include desktop {
-    //     background-image: url('#{$imagesPath}/desktop/#{$desktop}');
-    // }
+    @if $desktop {
+        @include desktop {
+            background-image: url('#{$imagesPath}/#{$desktop}');
+        }
+    }    
 }
 
 @mixin img-overlay($color: rgba(10, 0, 30, 0.5)) {
@@ -53,6 +57,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+@mixin margin-l-r-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @mixin font-face($name, $path, $weight: 400, $style: normal, $exts: eot woff2 woff ttf) {

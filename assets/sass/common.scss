@@ -7,6 +7,7 @@ body {
     overflow-x: hidden;
     font-size: 14px;
     background: #F8F8F8;
+    color:#1C1526;
     @include tablet-medium {
         font-size: 16px;
     }
@@ -18,44 +19,89 @@ body {
     }
 }
 
+img {
+    max-width: 100%;
+}
+
+ul,li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .container {
     max-width: 100%;
     padding: 0 18px;
-    @include tablet-large {
-        max-width: 1024px;
+    @include tablet-medium {
+        max-width: 728px;
+        margin: auto;
         padding: 0;
     }
+    @include tablet-large {
+        max-width: 941px;        
+    }
     @include desktop {
-        max-width: 1200px;
+        max-width: 1100px;
     }    
+}
+
+.container-reverse {
+    @include tablet-medium {
+        display: flex;
+        align-items: center;
+        .section__title {
+            margin-right: 22px;
+            img {
+                max-width: none;
+                width: 35px;
+            }
+        }                            
+    }    
+    @include desktop {
+        .section__title {
+            margin-right: 39px;
+        }
+    }
 }
 
 .section {
     padding: 25px 0;
+    @include tablet-medium {
+        padding: 38px 0;
+    }
     &__title {
-        font-size: 36px;
+        font-size: 30px;
         font-weight: 100;
         color: #090413;
+        @include mobile-medium {
+            font-size: 36px;
+        }                
     }
 } 
 
-.xs-block {
-    display: block;
-}
-
 .xs-none {
-    display: none;
+    display: none !important;
 }
 
 .md-block {
     @include tablet-medium {
-        display: block;
+        display: block !important;
     }
 }
 
 .md-none {
     @include tablet-medium {
-        display: none;
+        display: none !important;
+    }
+}
+
+.md-flex {
+    @include tablet-medium {
+        display: flex !important;
     }
 }
 
@@ -69,6 +115,10 @@ body {
     background-position: center;
 }
 
+.text-underline {
+    text-decoration: underline;
+}
+
 .h-100 {
     height: 100%;
 }
@@ -77,6 +127,47 @@ body {
     width: 100%;
 }
 
+.swiper-container {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 50px;
+    @include tablet-medium {
+        padding-bottom: 64px;
+    }
+  
+}
+
+.swiper-pagination-bullet {
+    border-radius: 0;
+    opacity: 1;
+    background: none;
+    border: 1px solid white;
+    @include tablet-medium {
+        height: 19px;
+        width: 19px;
+        
+    }
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    @include tablet-medium {
+        margin: 0 7px;
+    }
+}   
+
+
+.swiper-pagination-bullet-active {
+    background: white
+}
+
+.pagination-black {
+    .swiper-pagination-bullet {
+        border: 1px solid #1C1526;
+    }
+    .swiper-pagination-bullet-active {
+        background: #1C1526
+    }
+}
 
 
 @include tablet-medium {}

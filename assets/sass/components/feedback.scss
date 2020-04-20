@@ -1,0 +1,79 @@
+@mixin input-styles {
+    font-size: 18px;
+    font-weight: 300;    
+}
+
+.feedback {    
+    margin-bottom: 38px;    
+    &__form {
+        margin-top: 50px;
+        @include tablet-medium {
+            width: 40%;
+            margin-top: 0;
+            form {
+                margin-top: 35px;
+            }
+        }
+    }
+    input, textarea {
+        width: 85%;    
+        background-color: transparent;
+        outline: none;
+        border:none;
+        border-bottom: 1px solid #2E2936;
+        @include input-styles;
+        &::placeholder {
+            @include input-styles;
+            opacity: 0.5;
+        }
+        @include tablet-medium {
+            width: 100%;
+        }
+    }
+    input {
+        display: block;
+        margin-bottom: 30px;                                            
+    }    
+    &__button {
+        margin-top: 50px;
+        @include tablet-medium {
+            margin-top: 40px;
+        }
+    }
+    &__contact {
+        color: #0D0413;
+        display: flex; align-items: center;
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 28px;
+        a {
+            color: #0D0413;
+            text-decoration: underline;   
+            padding-left: 10px;            
+        }        
+    }  
+    &__background {
+        @include tablet-medium {           
+            background-image: url('#{$imagesPath}/tablet/feedback-bg.jpg');
+            @include background-default;
+            @include img-overlay();
+            position: absolute;             
+            top: 0;right: 0;         
+            width: 45%;            
+            height: 100%;
+        }
+    }  
+    @include tablet-medium {
+        textarea {
+            height: 2em;
+        }
+        .section__title {
+            font-size: 30px;
+        }
+    }    
+    @include tablet-large {
+        .section__title {
+            font-size: 36px;
+        }
+    }
+}
