@@ -144,7 +144,7 @@
             position: absolute;
             height: 100%;
             z-index: 2;
-            touch-action: none;
+            pointer-events: none;
             top: 0; left: 0; right: 0; margin: auto;
             &__img {
                 position: absolute;

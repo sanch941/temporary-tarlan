@@ -1,24 +1,42 @@
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2;
-    &__content {
+    z-index: 10;
+    @include tablet-medium {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__content {        
         display: flex;        
         align-items: center;
         justify-content: space-between;
         font-weight: 500;
-        font-size: 14px;
-        color: white;
+        font-size: 14px;        
+        a {
+            color: white
+        }
         @include tablet-medium {
             align-items: stretch;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0;
+                height: 100%; width: 100%;
+                background: white;
+                z-index: 1;           
+                opacity: 0;                
+                transition: 0.3s;
+            }
         }      
         @include tablet-large {
             font-size: 18px;
         }
     }
     &__logo {
+        z-index: 2;
         background: white;
         padding: 12px;
         @include tablet-medium {
@@ -43,7 +61,11 @@
             display: flex;            
         }       
     }
-    &__menu {                    
+    &__hamburger {
+        z-index: 2;
+    }
+    &__menu {      
+        z-index: 2;              
         justify-content: space-between;   
         padding-bottom: 10px;       
         &__item {                     
@@ -57,8 +79,7 @@
         &__link {        
             height: 100%;                
             display: flex;
-            align-items: flex-end;            
-            color:white;   
+            align-items: flex-end;                 
             position: relative;             
             &::before {
                 content: '';
@@ -83,9 +104,7 @@
     &__admin {           
         flex-direction: column;
         justify-content: flex-end;
-        a {
-            color: white
-        }     
+   
         &__number {
             display: flex;
             align-items: center;    
@@ -105,8 +124,7 @@
             a {
                 border: 1px solid white;
                 padding: 4px 14px;
-                transition: 0.2s; 
-                
+                transition: 0.2s;                 
             }
             &:hover a {
                 background: white;
@@ -114,8 +132,105 @@
             }
         }       
     }  
+    &__fit-xs {
+        position: absolute;
+        pointer-events: none;
+        top: 0; left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            height: 100%; width: 100%;
+            background: white;     
+            transform-origin: top left;       
+            transform: scaleX(0);
+            opacity: 0;
+            transition: 0.3s;
+           
+        }        
+    }
+    &__fit-left {        
+        &::before {
+            transform-origin: top right;
+        }
+    }
+    &__fit-right {
+        &::before {
+            transform-origin: top left;
+        }        
+    }
+    &__fit-left, &__fit-right {        
+        flex: 1;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            height: 100%; width: 100%;
+            background: white;            
+            transform: scaleX(0);
+            opacity: 0;
+            transition: 0.3s;
+        }        
+    }
+    
 }
 
 .header__menu__link-active::before {
     opacity: 1;
+}
+
+.header__filled {
+    .header__fit-xs {
+        &::before {
+            transform: scaleX(1);
+            opacity: 1;
+        }
+    }
+    .header__hamburger {
+        svg {
+            rect { fill: #1C1526 }
+        }
+    }
+    @include tablet-medium {
+        .header__fit-left, .header__fit-right {
+            &::before {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+        }       
+        .header__content {
+            a {
+                color:#1C1526;
+            }      
+            &::before {
+                opacity: 1;
+            }                       
+        }
+        .header__admin__number {
+            a {
+                border-bottom: 1px solid #1C1526;
+            }
+            svg {
+                path { fill: #1C1526 }
+            }  
+        }
+        .header__admin__link {            
+            a {
+                border: 1px solid #1C1526;                             
+            }
+            &:hover a {
+                background: #1C1526;
+                color:white;
+            }                    
+        }   
+        .header__menu__link {
+            &::before {
+                background-color: #1C1526;
+            }
+        }
+    }    
 }
