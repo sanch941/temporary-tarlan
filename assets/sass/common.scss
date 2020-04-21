@@ -134,7 +134,9 @@ a {
     @include tablet-medium {
         padding-bottom: 64px;
     }
-  
+    @include desktop {
+        padding-bottom: 70px;
+    }
 }
 
 .swiper-pagination-bullet {
@@ -143,8 +145,8 @@ a {
     background: none;
     border: 1px solid white;
     @include tablet-medium {
-        height: 19px;
-        width: 19px;
+        height: 15px;
+        width: 15px;
         
     }
 }

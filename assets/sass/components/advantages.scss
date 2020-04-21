@@ -1,4 +1,7 @@
 .advantages {  
+    @include desktop {
+        padding: 70px 0;
+    }
     .container {
         padding: 0;        
     }
@@ -9,9 +12,11 @@
         }
     }
     &__items {
+        margin-top: 25px;
         display: flex;
         justify-content: space-between;
         @include tablet-medium {
+            margin-top: 0;
             display: block;
         }
     }             

@@ -1,0 +1,48 @@
+.demo {
+    color: #1C1526;  
+    padding-top: 83px;  
+    @include tablet-medium {
+        padding-top: 130px;
+        .section__title {
+            font-size: 70px;
+        }
+    }
+    &__content {
+        padding: 30px 0;
+        @include tablet-medium {
+            padding: 50px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__item {
+        width: 100%;
+        + .demo__item {
+            margin-top: 40px;
+        }
+        @include tablet-medium {
+            width: 31%;
+            + .demo__item {
+                margin-top: 0;
+            }
+        }
+    }
+    &__img {        
+      img {
+        border: 1px solid #1C1526;
+          width: 100%;
+      }
+    }
+    &__description {
+        padding: 5px 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__name {
+        font-size: 24px;
+    }
+    &__price {
+        font-size: 18px;
+    }
+}

@@ -18,6 +18,11 @@
         @include tablet-medium {
             font-size: 18px;
         }
+        @include desktop {
+            &:last-child {
+                text-align: right;
+            }
+        }
     }
     &__year {
         font-weight: 500;             
@@ -27,6 +32,7 @@
         a {
             color: #090413; 
         }
+       
     }
     &__icons {        
         img:first-child {
@@ -40,6 +46,16 @@
                 margin-right: 10px;
             }
         }
+        @include desktop {
+            margin-top: 0;
+            img:first-child {
+                width: 260px;
+                margin-right: 20px;
+            }
+            img:last-child {
+                width: 167px;
+            }
+        }
     }
     &__company-name {
         font-size: 14px;
@@ -51,6 +67,20 @@
     &__year, &__company-name {
         @include tablet-medium {
             font-size: 24px;
+        }
+        @include desktop {
+            font-size: 18px;
+        }
+    }    
+    &__rules {
+        @include desktop {
+            margin-top: 0;
+            padding: 70px 0;
+        }
+    }
+    &__address {
+        @include desktop {
+            margin-top: 27px;
         }
     }
 }

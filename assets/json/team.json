@@ -1,34 +1,32 @@
 [
     {        
-        "fullname": "Имя Фамилия",
-        "position": "Должность"
+        "fullname": " Асет Баракбаев ",
+        "position": "Технический директор",
+        "img": "team-aset.jpg"
     },
     {        
-        "fullname": "Имя Фамилия",
-        "position": "Должность"
+        "fullname": " Маргулан Ерлан ",
+        "position": "Старший разработчик",
+        "img": "team-margulan.jpg"
     },
     {        
-        "fullname": "Имя Фамилия",
-        "position": "Должность"
+        "fullname": " Гайрат Куттумурадов ",
+        "position": "Старший специалист технической поддержки",
+        "img": "team-gairat.jpg"
     },
     {        
-        "fullname": "Имя Фамилия",
-        "position": "Должность"
+        "fullname": " Айгерим Ибраимова ",
+        "position": "Менеджер по продажам",
+        "img": "team-aigerim.jpg"
     },
     {        
-        "fullname": "Имя Фамилия",
-        "position": "Должность"
+        "fullname": " Ажара Рахимбаева ",
+        "position": "Главный бухгалтер",
+        "img": "team-azhar.jpg"
     },
     {        
-        "fullname": "Имя Фамилия",
-        "position": "Должность"
-    },
-    {        
-        "fullname": "Имя Фамилия",
-        "position": "Должность"
-    },
-    {        
-        "fullname": "Имя Фамилия",
-        "position": "Должность"
-    }
+        "fullname": "Фарух Файзулин",
+        "position": "Web-дизайнер",
+        "img": "team-faruh.jpg"
+    }    
 ]

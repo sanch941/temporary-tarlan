@@ -4,7 +4,9 @@
             <img :src="imgSrc('close.svg')" alt="" />
         </div>
         <div v-for="(item, index) in menu" :key="index" class="side-menu__link">
-            {{ item.text }}
+            <nuxt-link :to="item.to" @click.native="hideSideMenu">
+                {{ item.text }}
+            </nuxt-link>
         </div>
         <div class="side-menu__call">
             <div class="side-menu__phone">

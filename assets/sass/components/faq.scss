@@ -1,18 +1,38 @@
 .faq {    
     padding-top: 83px;
+    @include tablet-medium {
+        padding-top: 127px;
+    }
+    img {
+        max-width: none;
+    }  
+    &__section {
+        display: flex;
+        justify-content: space-between;
+    }  
     &__content {
         font-size: 14px;
+        margin-top: 20px;
         color: #1C1526;
-    }
+        @include tablet-medium {            
+            width: 45%;
+            font-size: 18px;
+        }
+    }    
     &__item {
-        margin-top: 38px;        
+        + .faq__item {
+            margin-top: 38px;        
+        }        
     }
     &__answer {
-        display: flex;
+        margin-top: 20px;
+        display: flex;        
     }
     &__question {
+        user-select: none;
         display: flex; align-items: center; 
         @include tablet-medium {
+            cursor: pointer;
             &:hover .faq__question-text {
                 text-decoration: underline;
             }
@@ -25,10 +45,16 @@
         opacity: 0;
         visibility: hidden;
     }
+    &__answer-text {
+        color: #878a8d
+    }
+    .btn {
+        margin-top: 50px;
+    }
 }
 
 .collapse-enter-active, .collapse-leave-active {
-    transition: opacity .5s;
+    transition: opacity .2s;
 }
 
 .collapse-enter, .collapse-leave-to /* .collapse-leave-active до версии 2.1.8 */ {

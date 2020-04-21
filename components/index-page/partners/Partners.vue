@@ -1,6 +1,6 @@
 <template>
     <div class="section partners">
-        <div class="container container-reverse">
+        <div class="container container-reverse relative">
             <div class="section__title">
                 <div class="md-none">Партнеры</div>
                 <div class="section__title__rotated xs-none md-block">

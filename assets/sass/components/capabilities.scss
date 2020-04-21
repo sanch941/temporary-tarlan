@@ -1,9 +1,19 @@
 .capabilities {
     height: auto;    
-    // @include responsive-background('mobile/hero-main.jpg');
-    background: black;
+    @include responsive-background('mobile/capabilities-bg.jpg', 'tablet/capabilities-bg.jpg', 'desktop/capabilities-bg.jpg');
+    @include background-default;
+    @include img-overlay();    
     color:white;
     font-weight: 300;
+    @include desktop {
+        padding: 0;
+        .swiper-container {
+            padding: 100px 0;
+        }
+        .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+            bottom: 30px;
+        }
+    }
     .container-reverse {
         @include tablet-medium {
             justify-content: space-between;
@@ -36,12 +46,13 @@
             &:nth-child(n + 3) {
                 margin-top: 25px;
                 width: 32%;            
-            }
+            }         
             &:nth-child(1) {
                 order: 1;
+                width: 50%;                
             }
             &:nth-child(2) {
-                order: 2;
+                order: 2;              
             }
             &:nth-child(3) {
                 order: 3;
@@ -57,6 +68,19 @@
                 margin-right: 0;
             }
         }
+        @include tablet-large {
+            &:nth-child(1),&:nth-child(2) {
+                .capabilities__text {
+                    width: 50%;
+                    @include margin-l-r-auto;
+                }
+            }
+        }
+        @include desktop {
+            &:nth-child(n + 3) {
+                margin-top: 100px;                
+            }     
+        }
     }
     &__icon {
         height: 81px;
@@ -66,7 +90,7 @@
     }
     &__text {
         margin-top: 10px;
-        @include tablet-medium {
+        @include tablet-medium {          
             font-size: 18px;
         }
     }
@@ -78,6 +102,7 @@
     }
     &__more-md {
         @include tablet-medium {
+            user-select: none;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -91,4 +116,5 @@
             width: 80%;   
         }        
     }
+    
 }

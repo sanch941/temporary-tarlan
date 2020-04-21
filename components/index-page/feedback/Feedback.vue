@@ -12,12 +12,32 @@
                     Оставить заявку
                 </div>
                 <form action="" @submit.prevent="submit">
-                    <input type="text" placeholder="ФИО" />
-                    <input type="number" placeholder="Контактный телефон" />
-                    <input type="text" placeholder="Email" />
-                    <input type="text" placeholder="Веб сайт компании" />
+                    <input
+                        v-model="form.fullName"
+                        type="text"
+                        placeholder="ФИО"
+                        required
+                    />
+                    <input
+                        v-model="form.phoneNumber"
+                        type="number"
+                        placeholder="Контактный телефон"
+                        required
+                    />
+                    <input
+                        v-model="form.email"
+                        type="text"
+                        placeholder="Email"
+                        required
+                    />
+                    <input
+                        v-model="form.website"
+                        type="text"
+                        placeholder="Веб сайт компании"
+                        required
+                    />
                     <textarea
-                        id=""
+                        v-model="form.comment"
                         placeholder="Комментарий"
                         name=""
                         rows="4"
@@ -36,7 +56,9 @@
                 </a>
             </div>
         </div>
-        <div class="feedback__background"></div>
+        <div class="feedback__background xs-none md-block">
+            <img :src="feedbackLines" alt="" />
+        </div>
     </div>
 </template>
 
@@ -50,8 +72,20 @@ export default {
         return {
             otherProps: {
                 type: 'submit'
+            },
+            form: {
+                fullName: '',
+                phoneNumber: null,
+                email: '',
+                website: '',
+                comment: ''
             }
         };
+    },
+    computed: {
+        feedbackLines() {
+            return require(`../../../assets/images/desktop/feedback-lines.png`);
+        }
     },
     methods: {
         imgSrc(path) {

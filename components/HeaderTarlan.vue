@@ -18,17 +18,17 @@
                         :key="index"
                         class="header__menu__item"
                     >
-                        <a class="header__menu__link" href="">
+                        <nuxt-link class="header__menu__link" :to="item.to">
                             {{ item.text }}
-                        </a>
+                        </nuxt-link>
                     </li>
                     <li class="header__menu__item">
                         <div class="header__menu__link">
                             <div class="xs-none md-flex header__admin">
-                                <div class="header__admin__number">
+                                <!-- <div class="header__admin__number">
                                     <header-tarlan-phone />
                                     <a href="+77010913025">+ 7 701 091 30 25</a>
-                                </div>
+                                </div> -->
                                 <div class="header__admin__link">
                                     <a href="">Личный кабинет</a>
                                 </div>

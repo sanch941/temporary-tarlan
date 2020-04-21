@@ -1,4 +1,13 @@
 .team {   
+    @include desktop {
+        padding: 100px 0 0;
+        .swiper-container {
+            padding-bottom: 100px;
+        }
+        .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+            bottom: 30px;
+        }
+    }  
     .container {
         padding: 0;
     }
@@ -11,7 +20,7 @@
     &__content {   
         padding: 0 18px;     
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: wrap;        
         justify-content: space-between;
         @include tablet-medium {
             padding: 0;
@@ -27,28 +36,40 @@
         @include tablet-medium {
             width: auto;
             font-size: 14px;
-        }                  
+        }        
+        @include desktop {
+            font-size: 18px;
+        }      
+        @include desktop {
+            margin-top: 0;
+        }    
     }
     &__img {
-        height: 203px;
-        width: 100%;
-        border: 1px solid #1C1526;
-        @include tablet-medium {
-            height: 190px;
-            width: auto;
-        }
-        @include desktop {
-            height: 266px;
-        }
+        // height: 203px;
+        // width: 100%;
+        // border: 1px solid #1C1526;
+        // @include tablet-medium {
+        //     height: 190px;
+        //     width: auto;
+        // }
+        // @include desktop {
+        //     height: 266px;
+        // }
     }
     &__fullname {
         margin-top: 7px;
         font-weight: 300;
+        // @include desktop {
+        //     margin-top: 29px;
+        // }
     }
     &__position {        
         font-weight: 500;
         @include tablet-medium {
             margin-top: 5px;
+        }
+        @include desktop {
+            margin-top: 2px;
         }
     }    
 }

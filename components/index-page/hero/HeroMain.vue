@@ -5,6 +5,9 @@
             <div class="hero__main__subtitle">{{ hero.main.subtitle }}</div>
             <btn text="Подключить" type="animation" />
         </div>
+        <div class="hero__main__windows">
+            <img :src="windows" alt="" />
+        </div>
     </div>
 </template>
 
@@ -18,6 +21,11 @@ export default {
         return {
             hero
         };
+    },
+    computed: {
+        windows() {
+            return require('../../../assets/images/svg/hero/windows.svg');
+        }
     }
 };
 </script>

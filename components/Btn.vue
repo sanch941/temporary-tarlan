@@ -42,6 +42,10 @@ export default {
                 return ['btn-default'];
             }
 
+            if (this.type === 'btn-animation-black') {
+                return ['btn-animation btn-animation-black'];
+            }
+
             return ['btn-animation'];
         }
     }

@@ -1,19 +1,23 @@
 .partners {
-    font-weight: 500;
+    font-weight: 300;
     color:white;
     background: rgba(10, 0, 30, 0.5);
     .section__title {
         color:white;
     }
+    @include responsive-background('mobile/partners-bg.jpg', 'tablet/partners-bg.jpg', 'desktop/partners-bg.jpg');
+    @include background-default;
+    @include img-overlay();    
+    @include desktop {
+        padding: 173px 0;
+    }  
     &__content {
         @include tablet-medium {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        @include desktop {
-            justify-content: space-around;
-        }
+        
     }
     &__description {
         @include tablet-medium {            
@@ -32,7 +36,8 @@
             font-size: 18px;
         }
         @include desktop {
-            font-size: 24px;
+            margin-top: 50px;
+            line-height: 28px;
         }
     }
     &__icons {

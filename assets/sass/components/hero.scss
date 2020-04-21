@@ -1,11 +1,24 @@
 .hero {
-    height: 667px;
+    // 667
+    height: 100%;
     color: white;   
+    .container {
+        padding-bottom: 50px;
+    }    
     @include tablet-medium {
         height: 612px;
     } 
+    @include desktop {
+        height: 760px;
+        .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+            bottom: 30px;
+        }
+    }
     .swiper-container {
         padding-bottom: 0;
+    }
+    .swiper-slide {
+        height: auto;
     }
     &__main, &__about, &__philosophy {
         height: 100%;
@@ -26,17 +39,23 @@
             }  
             @include desktop {
                 width: 100%;
+                padding: 190px 0 64px;
+                font-size: 64px;
             }
            
         }
         &__subtitle {
-            font-size: 24px;
+            font-size: 24px;            
             @include tablet-medium {
                 font-size: 36px;
             }      
             @include tablet-large {
                 width: 90%;
             }     
+            @include desktop {
+                width: 70%;
+                font-size: 36px;
+            }
         }
         .btn {
             margin-top: 100px;
@@ -45,6 +64,26 @@
             }
             @include tablet-medium {
                 margin-top: 83px;
+            }
+            @include desktop {
+                margin-top: 140px;
+            }
+        }
+        &__windows {
+            pointer-events: none;
+            position: absolute;
+            bottom: 10%; 
+            right: 5%;
+            transform: translateX(50%);
+            @include tablet-medium {
+                bottom: 20%;
+                right: 20%;
+                transform: translateX(0) scale(1.2);
+            }
+            @include desktop {
+                right: 15%;
+                bottom: 25%;
+                transform: translateX(0) scale(1.5);
             }
         }
     }
@@ -59,7 +98,8 @@
                 font-size: 48px;
             }
             @include desktop {
-                padding-top: 135px;
+                padding-top: 132px;
+                font-size: 80px;
             }
         }
         &__subtitle {
@@ -75,26 +115,43 @@
                 font-size: 20px;
                
             }
-            @include tablet-large {
-                
+            @include desktop {
+                font-size: 18px;
+                padding-top: 34px;
+                img {
+                    margin-right: 20px;
+                }
             }
         }
         .btn {
             margin-top: 25px;
+            @include desktop {
+                margin-top: 120px;
+            }
         }
     }
     &__philosophy {
         @include responsive-background('mobile/hero-philosophy.jpg', 'tablet/hero-philosophy.jpg');             
         &__content {
+            height: calc(100% - 50px);
             z-index: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include tablet-medium {
+                display: block;
+                height: auto;
+            }
         }
         &__title {
-            padding: 82px 0 210px;
+            padding: 82px 0 0;
             font-size: 32px;
-            @include mobile-medium {
-                padding: 82px 0 282px;
+            @include mobile-medium {                
                 font-size: 36px;
-            }                        
+            }            
+            @include tablet-medium {
+                padding: 82px 0 282px;
+            }           
         }
         &__quote {
             @include tablet-medium {
@@ -127,44 +184,46 @@
             }
             @include desktop {
                 font-size: 24px;
-                padding: 40px 0 190px;
+                padding: 47px 0 311px;
             }
         }
-        &__rotated-title {
-            @include desktop {
-                position: absolute;
-                top: 50px;left: -70px;
-                bottom: 0;         
-                margin: auto;   
-                height: 80%;         
-                z-index: 2;
-            }
-        }
+      
         &__director {
             position: absolute;
+            padding-bottom: 0;
             height: 100%;
             z-index: 2;
             pointer-events: none;
             top: 0; left: 0; right: 0; margin: auto;
             &__img {
                 position: absolute;
-                bottom: 0; left: 18px;
-                height: 502px; 
-                width: 290px;     
+                bottom: 0; left: 18px;                
                 z-index: 1;                  
                 @include responsive-background('mobile/hero-philosophy-director.png', 'tablet/hero-philosophy-director.png', 'desktop/hero-philosophy-director.png');
-                @include background-default; 
-                @include mobile-medium {
-                    width: 301px;
+                @include background-default;               
+                @include tablet-medium {
+                    height: 502px; 
+                    width: 290px;
                 }
                 @include tablet-large {             
                     left: 200px;
                 }
                 @include desktop {
-                    width: 400px;
-                    height: 550px;
-                    left: 180px;
+                    left: 100px;
+                    height: auto;
+                    width: auto;
                 }
+            }
+        }
+        &__windows {
+            pointer-events: none;
+            position: absolute;
+            bottom: 15%; 
+            right: 5%;          
+            @include desktop {
+                bottom: 20%;
+                right: 10%;
+                transform: scale(1.5);                
             }
         }
     }
@@ -183,7 +242,16 @@
         img:first-child {
             margin-right: 14px;
         }
+        @include desktop {
+            width: 430px;
+            padding: 26px 0 26px 46px;
+            img {
+                width: 25px;
+            }
+        }
     }
 }
 
-
+.hero .hero__philosophy__director {
+    padding-bottom: 0;
+}
