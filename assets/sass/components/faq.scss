@@ -1,0 +1,36 @@
+.faq {    
+    padding-top: 83px;
+    &__content {
+        font-size: 14px;
+        color: #1C1526;
+    }
+    &__item {
+        margin-top: 38px;        
+    }
+    &__answer {
+        display: flex;
+    }
+    &__question {
+        display: flex; align-items: center; 
+        @include tablet-medium {
+            &:hover .faq__question-text {
+                text-decoration: underline;
+            }
+        }        
+    }
+    &__question-icon, &__answer-icon {
+        margin-right: 10px;
+    }    
+    &__answer-icon {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.collapse-enter-active, .collapse-leave-active {
+    transition: opacity .5s;
+}
+
+.collapse-enter, .collapse-leave-to /* .collapse-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+}
