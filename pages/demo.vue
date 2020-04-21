@@ -9,16 +9,18 @@
                     :item="item"
                 />
             </div>
+            <btn text="Подключить" />
         </div>
     </div>
 </template>
 
 <script>
+import Btn from '../components/Btn.vue';
 import DemoItem from '../components/demo/DemoItem.vue';
 import demo from '~/assets/json/demo';
 
 export default {
-    components: { DemoItem },
+    components: { DemoItem, Btn },
     data() {
         return {
             demo

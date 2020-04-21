@@ -81,6 +81,8 @@
     &__address {
         @include desktop {
             margin-top: 27px;
+            width: 70%;
+            margin-left: auto;
         }
     }
 }

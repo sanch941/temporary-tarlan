@@ -46,14 +46,13 @@
 import { mapActions } from 'vuex';
 import { fitMenu } from '../utils/directives/fit-menu';
 import HeaderTarlanHamburger from './HeaderTarlanHamburger.vue';
-import HeaderTarlanPhone from './HeaderTarlanPhone.vue';
 import menu from '~/assets/json/menu';
 
 export default {
     directives: {
         scroll: fitMenu
     },
-    components: { HeaderTarlanPhone, HeaderTarlanHamburger },
+    components: { HeaderTarlanHamburger },
     data() {
         return {
             menu

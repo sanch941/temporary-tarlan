@@ -1,5 +1,5 @@
 <template>
-    <div class="section feedback relative">
+    <div id="feedback" class="section feedback relative">
         <div class="container container-reverse">
             <div class="section__title">
                 <div class="md-none">Оставьте заявку</div>

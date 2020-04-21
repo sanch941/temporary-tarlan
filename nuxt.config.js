@@ -11,17 +11,15 @@ export default {
      ** Headers of the page
      */
     head: {
-        title: 'Static template',
+        title: 'Tarlan Payments - платежи для бизнеса',
         meta: [
             { charset: 'utf-8' },
             {
                 name: 'viewport',
                 content: 'width=device-width, initial-scale=1'
             }
-        ]
-        // link: [
-        //     { rel: 'icon', type: 'image/png', href: '' }
-        // ]
+        ],
+        link: [{ rel: 'icon', type: 'image/png', href: 'favicon.png' }]
     },
     /*
      ** Customize the progress-bar color
@@ -40,9 +38,13 @@ export default {
      */
     buildModules: [
         // Doc: https://github.com/nuxt-community/eslint-module
-        '@nuxtjs/eslint-module'
+        '@nuxtjs/eslint-module',
+        '@aceforth/nuxt-optimized-images'
         // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     ],
+    optimizedImages: {
+        optimizeImages: true
+    },
     /*
      ** Nuxt.js modules
      */

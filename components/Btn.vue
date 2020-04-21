@@ -1,5 +1,5 @@
 <template>
-    <div class="btn-container">
+    <div class="btn-container" @click="goToFeedBack">
         <button
             v-if="type === 'default'"
             v-bind="otherProps"
@@ -47,6 +47,22 @@ export default {
             }
 
             return ['btn-animation'];
+        }
+    },
+    methods: {
+        goToFeedBack() {
+            if (this.text === 'Подключить') {
+                const currentRoute = this.$router.currentRoute;
+
+                if (currentRoute.name === 'index') {
+                    return this.$scrollTo('#feedback');
+                }
+
+                this.$router.push('/');
+                setTimeout(() => {
+                    this.$scrollTo('#feedback');
+                }, 100);
+            }
         }
     }
 };
